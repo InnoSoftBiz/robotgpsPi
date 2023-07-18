@@ -1,45 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
 <Document>
-	<name>TestFollow</name>
-	<gx:CascadingStyle kml:id="__managed_style_1F8B93A3772A838F0F12">
-		<Style>
-			<IconStyle>
-				<Icon>
-					<href>https://earth.google.com/earth/rpc/cc/icon?color=d32f2f&amp;id=2000&amp;scale=4</href>
-				</Icon>
-				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
-			</IconStyle>
-			<LabelStyle>
-			</LabelStyle>
-			<LineStyle>
-				<color>ff2dc0fb</color>
-				<width>4</width>
-			</LineStyle>
-			<PolyStyle>
-				<color>40ffffff</color>
-			</PolyStyle>
-			<BalloonStyle>
-				<displayMode>hide</displayMode>
-			</BalloonStyle>
-		</Style>
-	</gx:CascadingStyle>
-	<StyleMap id="__managed_style_09EF9D3F7E2A838F0F12">
-		<Pair>
-			<key>normal</key>
-			<styleUrl>#__managed_style_1F8B93A3772A838F0F12</styleUrl>
-		</Pair>
-		<Pair>
-			<key>highlight</key>
-			<styleUrl>#__managed_style_2B04B8DF482A838F0F12</styleUrl>
-		</Pair>
-	</StyleMap>
-	<gx:CascadingStyle kml:id="__managed_style_078547DA0B2A838E7EBE">
+	<name>TestFollow2</name>
+	<gx:CascadingStyle kml:id="__managed_style_2CC6A17A9F2A9D4F1AB9">
 		<Style>
 			<IconStyle>
 				<scale>1.2</scale>
 				<Icon>
-					<href>https://earth.google.com/earth/rpc/cc/icon?color=d32f2f&amp;id=2161&amp;scale=4</href>
+					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
 				</Icon>
 				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
 			</IconStyle>
@@ -57,34 +25,21 @@
 			</BalloonStyle>
 		</Style>
 	</gx:CascadingStyle>
-	<gx:CascadingStyle kml:id="__managed_style_2B04B8DF482A838F0F12">
-		<Style>
-			<IconStyle>
-				<scale>1.2</scale>
-				<Icon>
-					<href>https://earth.google.com/earth/rpc/cc/icon?color=d32f2f&amp;id=2000&amp;scale=4</href>
-				</Icon>
-				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
-			</IconStyle>
-			<LabelStyle>
-			</LabelStyle>
-			<LineStyle>
-				<color>ff2dc0fb</color>
-				<width>6</width>
-			</LineStyle>
-			<PolyStyle>
-				<color>40ffffff</color>
-			</PolyStyle>
-			<BalloonStyle>
-				<displayMode>hide</displayMode>
-			</BalloonStyle>
-		</Style>
-	</gx:CascadingStyle>
-	<gx:CascadingStyle kml:id="__managed_style_120F18123E2A838E7EBD">
+	<StyleMap id="__managed_style_089E5264BC2A9D4F1AB9">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_172A271E9B2A9D4F1AB9</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_2CC6A17A9F2A9D4F1AB9</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_172A271E9B2A9D4F1AB9">
 		<Style>
 			<IconStyle>
 				<Icon>
-					<href>https://earth.google.com/earth/rpc/cc/icon?color=d32f2f&amp;id=2161&amp;scale=4</href>
+					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
 				</Icon>
 				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
 			</IconStyle>
@@ -102,116 +57,229 @@
 			</BalloonStyle>
 		</Style>
 	</gx:CascadingStyle>
-	<StyleMap id="__managed_style_052092A1A92A838E7EBD">
+	<gx:CascadingStyle kml:id="__managed_style_2DE90893CF2A9D4EFF7C">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2006&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>6</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_1180B83A152A9D4EFF7C">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2006&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0EFB27FAC12A9D4EFF7C">
 		<Pair>
 			<key>normal</key>
-			<styleUrl>#__managed_style_120F18123E2A838E7EBD</styleUrl>
+			<styleUrl>#__managed_style_1180B83A152A9D4EFF7C</styleUrl>
 		</Pair>
 		<Pair>
 			<key>highlight</key>
-			<styleUrl>#__managed_style_078547DA0B2A838E7EBE</styleUrl>
+			<styleUrl>#__managed_style_2DE90893CF2A9D4EFF7C</styleUrl>
 		</Pair>
 	</StyleMap>
-	<Placemark id="0D47C6207C2A838E32BD">
-		<name>Start</name>
+	<Placemark id="04AA1163912A9D4EE8F3">
+		<name>หมุดที่ไม่มีชื่อ</name>
 		<LookAt>
-			<longitude>100.5502376896158</longitude>
-			<latitude>13.8699441311311</latitude>
-			<altitude>1.807304433757431</altitude>
-			<heading>0</heading>
+			<longitude>100.5446964468684</longitude>
+			<latitude>13.87016989353756</latitude>
+			<altitude>5.428417301480719</altitude>
+			<heading>0.001832836275934105</heading>
 			<tilt>0</tilt>
 			<gx:fovy>35</gx:fovy>
-			<range>131.0236992751561</range>
+			<range>82.28649231421515</range>
 			<altitudeMode>absolute</altitudeMode>
 		</LookAt>
-		<styleUrl>#__managed_style_052092A1A92A838E7EBD</styleUrl>
+		<styleUrl>#__managed_style_0EFB27FAC12A9D4EFF7C</styleUrl>
 		<Point>
-			<coordinates>100.5502219629368,13.87014374739061,1.809305116859498</coordinates>
+			<coordinates>100.5448483011969,13.87014168838915,5.010681455589043</coordinates>
 		</Point>
 	</Placemark>
-	<Placemark id="03A8239AFD2A838EDB75">
-		<name>point1</name>
+	<Placemark id="0DA12A1D602A9D4F1AB8">
+		<name>หมุดที่ไม่มีชื่อ</name>
 		<LookAt>
-			<longitude>100.550363134803</longitude>
-			<latitude>13.87019210096105</latitude>
-			<altitude>1.807308813508872</altitude>
-			<heading>0</heading>
+			<longitude>100.5446964468684</longitude>
+			<latitude>13.87016989353756</latitude>
+			<altitude>5.428417301480719</altitude>
+			<heading>0.001832836275934105</heading>
 			<tilt>0</tilt>
 			<gx:fovy>35</gx:fovy>
-			<range>120.3336110104465</range>
+			<range>82.28649231421515</range>
 			<altitudeMode>absolute</altitudeMode>
 		</LookAt>
-		<styleUrl>#__managed_style_09EF9D3F7E2A838F0F12</styleUrl>
+		<styleUrl>#__managed_style_089E5264BC2A9D4F1AB9</styleUrl>
 		<Point>
-			<coordinates>100.5500694798283,13.87008149114368,1.821817972978552</coordinates>
+			<coordinates>100.5447085110301,13.8701375924882,5.477950559210788</coordinates>
 		</Point>
 	</Placemark>
-	<Placemark id="0DAE5A94602A838F59FF">
-		<name>point2</name>
+	<Placemark id="062881B39E2A9D4FE08C">
+		<name>หมุดที่ไม่มีชื่อ</name>
 		<LookAt>
-			<longitude>100.5502423347565</longitude>
-			<latitude>13.87004120723206</latitude>
-			<altitude>1.807291315722832</altitude>
-			<heading>5.609729767521973</heading>
-			<tilt>3.895406006083658</tilt>
+			<longitude>100.545021518137</longitude>
+			<latitude>13.87041622600296</latitude>
+			<altitude>4.140254043740567</altitude>
+			<heading>0.001832826730972385</heading>
+			<tilt>0</tilt>
 			<gx:fovy>35</gx:fovy>
-			<range>110.9441916778087</range>
+			<range>222.6758422938656</range>
 			<altitudeMode>absolute</altitudeMode>
 		</LookAt>
-		<styleUrl>#__managed_style_09EF9D3F7E2A838F0F12</styleUrl>
+		<styleUrl>#__managed_style_089E5264BC2A9D4F1AB9</styleUrl>
 		<Point>
-			<coordinates>100.5500600084711,13.8699451804701,1.809321811389469</coordinates>
+			<coordinates>100.5446854758535,13.87045761825789,3.836996811513674</coordinates>
 		</Point>
 	</Placemark>
-	<Placemark id="0D2275BCAE2A838FA905">
-		<name>point3</name>
+	<Placemark id="08B1AC48562A9D4FF7F9">
+		<name>หมุดที่ไม่มีชื่อ</name>
 		<LookAt>
-			<longitude>100.5502423347565</longitude>
-			<latitude>13.87004120722149</latitude>
-			<altitude>1.807300748598353</altitude>
-			<heading>5.609729767537163</heading>
-			<tilt>3.895406006073264</tilt>
+			<longitude>100.5450215181588</longitude>
+			<latitude>13.87041622602409</latitude>
+			<altitude>4.140254043740567</altitude>
+			<heading>0.001832826730972385</heading>
+			<tilt>0</tilt>
 			<gx:fovy>35</gx:fovy>
-			<range>110.9441916778087</range>
+			<range>222.6758191162662</range>
 			<altitudeMode>absolute</altitudeMode>
 		</LookAt>
-		<styleUrl>#__managed_style_09EF9D3F7E2A838F0F12</styleUrl>
+		<styleUrl>#__managed_style_089E5264BC2A9D4F1AB9</styleUrl>
 		<Point>
-			<coordinates>100.5501888511319,13.86986577345168,1.809332621480007</coordinates>
+			<coordinates>100.5450801592699,13.87057156501136,3.262532948114116</coordinates>
 		</Point>
 	</Placemark>
-	<Placemark id="00E5E37C022A838FF2D7">
-		<name>point4</name>
+	<Placemark id="0485D0BF3A2A9D50357C">
+		<name>หมุดที่ไม่มีชื่อ</name>
 		<LookAt>
-			<longitude>100.5502423347565</longitude>
-			<latitude>13.87004120722149</latitude>
-			<altitude>1.807291315722832</altitude>
-			<heading>5.609729767537178</heading>
-			<tilt>3.89540600607289</tilt>
+			<longitude>100.545737773849</longitude>
+			<latitude>13.87043199485046</latitude>
+			<altitude>4.953140208988314</altitude>
+			<heading>0.001832822356181651</heading>
+			<tilt>0</tilt>
 			<gx:fovy>35</gx:fovy>
-			<range>110.9442032666084</range>
+			<range>226.205697965961</range>
 			<altitudeMode>absolute</altitudeMode>
 		</LookAt>
-		<styleUrl>#__managed_style_09EF9D3F7E2A838F0F12</styleUrl>
+		<styleUrl>#__managed_style_089E5264BC2A9D4F1AB9</styleUrl>
 		<Point>
-			<coordinates>100.5503326947779,13.86994581803437,1.809356013365953</coordinates>
+			<coordinates>100.5455773789436,13.87065236496717,4.234892542195099</coordinates>
 		</Point>
 	</Placemark>
-	<Placemark id="0007CC2D602A8390358F">
-		<name>pint6</name>
+	<Placemark id="0C618DE7EA2A9D504A72">
+		<name>หมุดที่ไม่มีชื่อ</name>
 		<LookAt>
-			<longitude>100.5502423347565</longitude>
-			<latitude>13.87004120721092</latitude>
-			<altitude>1.807291315722832</altitude>
-			<heading>5.609729767552336</heading>
-			<tilt>3.895406006061654</tilt>
+			<longitude>100.545737773849</longitude>
+			<latitude>13.87043199482932</latitude>
+			<altitude>4.953140208988314</altitude>
+			<heading>0.001832822356181651</heading>
+			<tilt>0</tilt>
 			<gx:fovy>35</gx:fovy>
-			<range>110.9442032666084</range>
+			<range>226.2056979659611</range>
 			<altitudeMode>absolute</altitudeMode>
 		</LookAt>
-		<styleUrl>#__managed_style_09EF9D3F7E2A838F0F12</styleUrl>
+		<styleUrl>#__managed_style_089E5264BC2A9D4F1AB9</styleUrl>
 		<Point>
-			<coordinates>100.5503439360068,13.87009593686028,1.809311239225723</coordinates>
+			<coordinates>100.545996286435,13.87070834144335,4.903495652055507</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="01BFA1080E2A9D508005">
+		<name>หมุดที่ไม่มีชื่อ</name>
+		<LookAt>
+			<longitude>100.5471225906244</longitude>
+			<latitude>13.87081508186533</latitude>
+			<altitude>4.85395962285218</altitude>
+			<heading>0.00183280863517934</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>78.82089653634468</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_089E5264BC2A9D4F1AB9</styleUrl>
+		<Point>
+			<coordinates>100.5471326776453,13.87087686540822,5.454614646959256</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0790AC6D072A9D509B3C">
+		<name>หมุดที่ไม่มีชื่อ</name>
+		<LookAt>
+			<longitude>100.5474759231168</longitude>
+			<latitude>13.8709174492401</latitude>
+			<altitude>3.491644307129458</altitude>
+			<heading>0.001832798493502916</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>101.1999232989729</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_089E5264BC2A9D4F1AB9</styleUrl>
+		<Point>
+			<coordinates>100.5472021971058,13.87088677833917,4.578012578248497</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0A27BFC1182A9D50ADA6">
+		<name>หมุดที่ไม่มีชื่อ</name>
+		<LookAt>
+			<longitude>100.5474759231168</longitude>
+			<latitude>13.8709174492401</latitude>
+			<altitude>3.491644307129458</altitude>
+			<heading>0.001832798493502916</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>101.1999348877726</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_089E5264BC2A9D4F1AB9</styleUrl>
+		<Point>
+			<coordinates>100.5473360535843,13.87086287599701,3.529893738246233</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0672670BE32A9D50D0FF">
+		<name>หมุดที่ไม่มีชื่อ</name>
+		<LookAt>
+			<longitude>100.5482925833686</longitude>
+			<latitude>13.87071181790149</latitude>
+			<altitude>2.493236815015123</altitude>
+			<heading>0.001832790936923213</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>72.96591045167588</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_089E5264BC2A9D4F1AB9</styleUrl>
+		<Point>
+			<coordinates>100.5482773619036,13.87063731354628,2.622913628391294</coordinates>
 		</Point>
 	</Placemark>
 </Document>

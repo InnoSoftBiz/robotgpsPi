@@ -5,14 +5,12 @@ def kml_to_csv(kml_file_path):
 	with open(kml_file_path,'rb') as kml_file:
 		root = parser.parse(kml_file).getroot()
 		placemarks = root.Document.Placemark
-		if placemarks:
-			for placemark in placemarks:
-				name = placemark.name.text.strip()
-				coordinates = placemark.Point.coordinates.text.strip().split(',')
-				longitude, latitude = [float(coord.strip()) for coord in coordinates[:2]]
+		for placemark in placemarks:
+			coordinates = placemark.Point.coordinates.text.strip().split(',')
+			longitude, latitude = [float(coord.strip()) for coord in coordinates[:2]]
 				
-				pack_waypoint = [name,latitude,longitude]
-				yield pack_waypoint
+			pack_waypoint = [latitude,longitude]
+			yield pack_waypoint
 
 if __name__ == '__main__':				
 	waypointall = []

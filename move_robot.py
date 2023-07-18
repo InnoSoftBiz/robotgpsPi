@@ -28,3 +28,5 @@ class Robot:
         delta_y = target_y - self.pos[1]
         self.u = delta_x * math.cos(self.theta_e) + delta_y * math.sin(self.theta_e)
         self.w = (-1 / self.r) * math.sin(self.theta_e) * delta_x + (1 / self.r) * math.cos(self.theta_e) * delta_y
+        
+        return self.u, self.w, self.theta_e, self.theta_d
