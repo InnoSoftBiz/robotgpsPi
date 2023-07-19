@@ -47,7 +47,7 @@ class main:
 		if len(path) > 0:
 			robot.follow_path()
 			robot.move()
-			print(f"Vl : {robot.vl * 0.006} Vr : {robot.vr * 0.006}")
+			print(f"Vl : {robot.vl * 50} Vr : {robot.vr * 50}")
 			if wna.Waypoint(posrobot, path[0][0]).haversine() < 0.0001:
 				path[0].pop(0)
 				if path[0][0] == mainpath[0]:
