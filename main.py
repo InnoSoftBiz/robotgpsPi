@@ -3,6 +3,7 @@ import math
 import threading
 import json
 import multiprocessing
+import bmm150
 
 import gps
 import WaypointNavigationAlgorithm as wna
@@ -40,14 +41,14 @@ class main:
 			#mqtt.MQTT_R(self.hostname,self.username,self.password).publish_single(topic[1],j)
 			#print(i)
 			
-	def robot_move(self, L, r, posrobot, path):
+	def robot_move(self, L, r, posrobot, path, compass):
 		mainpath = self.kml_thread().copy()
 		# self.waypoint1 = gps.GPSModule().read_gps_data()
-		robot = mr.Robot(L, r, posrobot, path[0], path[1], self.BMM150)
+		robot = mr.Robot(L, r, posrobot, path[0], path[1], compass)
 		if len(path) > 0:
 			robot.follow_path()
 			robot.move()
-			print(f"Vl : {robot.vl * 50} Vr : {robot.vr * 50}")
+			print(f"Vl : {robot.vl * 50} Vr : {robot.vr * 50} thetaE : {robot.theta_e}")
 			if wna.Waypoint(posrobot, path[0][0]).haversine() < 0.0001:
 				path[0].pop(0)
 				if path[0][0] == mainpath[0]:
@@ -106,20 +107,27 @@ if __name__ == "__main__"	:
 	password = "RIPzero27413."	
 	main_f = main(hostname,username,password,["Robot/GPS","Robt/Travel"])
 	path_all = []
+	# device = bmm150.BMM150()
 	
 	for posgps in main_f.run_gps():
 		if posgps[0] != 0 and posgps[1] != 0 :
 			
 			main_f.gps_threading(posgps)
 			main_f.pud_thread()
+			x, y, z = device.read_mag_data()
+
+			# heading_rads = math.atan2(x, y)
+			# heading_degrees = math.degrees(heading_rads)
+			# heading_degrees = (heading_degrees + 360) % 360
 			
 			if len(path_all) == 0:
 				path_all = main_f.cal_thread(posgps)
 				print(path_all)
 				
 			if len(path_all) > 0 :
-				main_f.robot_move(0.324, 8.4, posgps, path_all)
-			print(posgps)
+				main_f.robot_move(0.324, 8.4, posgps, path_all, heading_degrees)
+			#print(posgps)
+	print("Out for loop")
 	#kml_file = "waypoint.kml"
 	# posRobot = gps.GPSModule().read_gps_data()
 	# running = True
