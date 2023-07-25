@@ -8,9 +8,9 @@ def compass():
 
 		heading_rads = math.atan2(x, y)
 		heading_degrees = math.degrees(heading_rads)
-		heading_degrees = (heading_degrees + 360) % 360
+		heading_degrees = int((heading_degrees + 360) % 360)
 		
-		yield x, y, z, heading_rads, heading_degrees
+		yield heading_degrees
 	
 if __name__ == '__main__':
 	for i in compass():

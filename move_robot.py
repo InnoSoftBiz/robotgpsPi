@@ -2,9 +2,9 @@ import  math
 
 class Robot:
     
-    def __init__(self, L, r, pos_robot, path, theta_desired, theta_actual):
+    def __init__(self, L, pos_robot, path, theta_desired, theta_actual):
         self.L = L
-        self.r = r
+        self.r = L/2
         self.pos = pos_robot
         self.path = path[0]
         self.theta_d = theta_desired[0]
