@@ -1,16 +1,18 @@
 import time
 import math
-import threading
+#import threading
 import json
-import multiprocessing
+#import multiprocessing
 import bmm150
+#from multiprocessing import Process
 
 import gps
 import WaypointNavigationAlgorithm as wna
 import mqtt
-from multiprocessing import Process
 import File_kml as kml
 import move_robot as mr
+import filewaypoint as mp
+import hard_controll as hc
 
 class main:
 	
@@ -41,14 +43,15 @@ class main:
 			#mqtt.MQTT_R(self.hostname,self.username,self.password).publish_single(topic[1],j)
 			#print(i)
 			
-	def robot_move(self, L, posrobot, path, compass):
-		mainpath = self.kml_thread().copy()
+	def robot_move(self, posrobot, path, compass):
+		mainpath = self.file_thread().copy()
 		# self.waypoint1 = gps.GPSModule().read_gps_data()
-		robot = mr.Robot(L, posrobot, path[0], path[1], compass)
+		# robot = mr.Robot(L, posrobot, path[0], path[1], compass)
+		robot = hc.Robot_hard(posrobot, path, compass)
 		if len(path) > 0:
 			robot.follow_path()
 			robot.move()
-			print(f"Vl : {robot.vl * 0.001} Vr : {robot.vr * 0.001} thetaE = {robot.theta_e}")
+			print(f"V : {robot.u}")
 			if wna.Waypoint(posrobot, path[0][0]).haversine() < 0.0001:
 				path[0].pop(0)
 				if path[0][0] == mainpath[0]:
@@ -57,7 +60,7 @@ class main:
 		#print(self.pos)
 	
 	def cal_thread(self,posrobot):
-		waypoints = self.kml_thread().copy()
+		waypoints = self.file_thread().copy()
 		waypoints.insert(0,posrobot)
 		Nwaypoints = []
 		theta = []
@@ -83,10 +86,11 @@ class main:
 		#print(Nwaypoints)
 		return (Nwaypoints, theta)
 	
-	def kml_thread(self):
+	def file_thread(self):
 		waypoints = []
-		for i in kml.kml_to_csv(self.file_kml):
-			waypoints.append(i)
+		# for i in kml.kml_to_csv(self.file_kml):
+			# waypoints.append(i)
+		waypoints = mp.read_mp()
 		return waypoints
 	
 	def gps_threading(self,posrobot):
@@ -108,6 +112,7 @@ if __name__ == "__main__"	:
 	main_f = main(hostname,username,password,["Robot/GPS","Robt/Travel"])
 	path_all = []
 	device = bmm150.BMM150()
+	hc.port_controll()
 	
 	for posgps in main_f.run_gps():
 		if posgps[0] != 0 and posgps[1] != 0 :
