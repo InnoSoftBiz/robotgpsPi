@@ -1,5 +1,6 @@
 import bmm150
 import math
+import time
 
 def compass():
 	device = bmm150.BMM150()
@@ -8,10 +9,10 @@ def compass():
 
 		heading_rads = math.atan2(x, y)
 		heading_degrees = math.degrees(heading_rads)
-		heading_degrees = int((heading_degrees + 360) % 360)
+		heading_degrees = round(heading_degrees)
 		
-		yield heading_degrees
+		print(heading_degrees)
+		time.sleep(0.5)
 	
 if __name__ == '__main__':
-	for i in compass():
-		print(i)
+	compass()

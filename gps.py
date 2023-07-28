@@ -8,7 +8,7 @@ class GPSModule:
     def __init__(self):
         self.gps = [0, 0]
         self.port = '/dev/ttyS0'
-        self.ser = serial.Serial(self.port, baudrate=9600, timeout=0.5)
+        self.ser = serial.Serial(self.port, baudrate=9600, timeout=1)
         self.dataout = pynmea2.NMEAStreamReader()
 
     def read_gps_data(self):

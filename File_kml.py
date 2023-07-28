@@ -1,8 +1,8 @@
 from pykml import parser
 
-def kml_to_csv(kml_file_path):
+def kml_to_csv():
 	pack_waypoint = None
-	with open(kml_file_path,'rb') as kml_file:
+	with open("waypoint.kml",'rb') as kml_file:
 		root = parser.parse(kml_file).getroot()
 		placemarks = root.Document.Placemark
 		for placemark in placemarks:

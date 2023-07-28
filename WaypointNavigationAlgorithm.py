@@ -43,7 +43,7 @@ class Waypoint:
         bearing_deg = math.degrees(self.bearing_rad)
 
         # Normalize the bearing to a range of 0 to 360 degrees
-        bearing_deg = (bearing_deg + 360) % 360
+        #bearing_deg = (bearing_deg + 360) % 360
 
         return (self.bearing_rad, bearing_deg)
 

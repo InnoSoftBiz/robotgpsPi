@@ -11,17 +11,19 @@ class Robot_hard:
 		self.u = {}
 		self.u["vl"] = 0
 		self.u["vr"] = 0
+		self.ser = serial.Serial('/dev/ttyACM0', 115200, timeout = 1)
 		
 	def move_h(self):
-		if self.compass < self.ber[1][0] - 5:
-			self.u["vl"] = 0.1
-			self.u["vr"] = -0.1
+		print("theta_taget:",self.ber[0])
+		if self.compass <= self.ber[0] - 10:
+			self.u["vl"] = 0.05
+			self.u["vr"] = -0.05
 			
-		elif self.compass > self.ber[1][0] + 5:
-			self.u["vl"] = -0.1
-			self.u["vr"] = 0.1
+		elif self.compass >= self.ber[0] + 10:
+			self.u["vl"] = -0.05
+			self.u["vr"] = 0.05
 			
-		else:
+		elif  self.ber[0] - 10 <= self.compass <= self.ber[0] + 10:
 			self.u["vl"] = 0.1
 			self.u["vr"] = 0.1
 			
@@ -32,6 +34,7 @@ class Robot_hard:
 		sendtroll = json.dumps(self.u)
 		bytes_troll = sendtroll.encode('ascii')
 		self.ser.write(bytes_troll + b"\n")
+		time.sleep(1)
 		
 def port_controll():
 	ser = serial.Serial('/dev/ttyACM0', 115200, timeout= 1)
