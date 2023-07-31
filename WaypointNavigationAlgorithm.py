@@ -43,14 +43,14 @@ class Waypoint:
         bearing_deg = math.degrees(self.bearing_rad)
 
         # Normalize the bearing to a range of 0 to 360 degrees
-        #bearing_deg = (bearing_deg + 360) % 360
+        bearing_deg = (bearing_deg + 360) % 360
 
         return (self.bearing_rad, bearing_deg)
 
     def destination(self,start):
         latr = math.radians(start[0])
         lonr = math.radians(start[1])
-        num_sub = self.d // 0.001
+        num_sub = self.d // 0.005
         d = self.d / (num_sub-1)
         delta_lat = d / self.R
         lat_sub = latr + (delta_lat * math.cos(self.bearing()[0]))

@@ -24,21 +24,21 @@ class mainR:
 		self.travel = {}
 		#self.posrobot = [0,0]
 			
-	def robot_move(self, posrobot, path, compass):
-		mainpath = self.file_thread().copy()
+	# def robot_move(self, path):
+		# mainpath = self.file_thread().copy()
 		# self.waypoint1 = gps.GPSModule().read_gps_data()
 		# robot = mr.Robot(L, posrobot, path[0], path[1], compass)
 		#print(compass)
-		robot = hc.Robot_hard(posrobot, path, compass)
-		if len(path) > 0:
-			#robot.follow_path()
-			robot.move_h()
-			#print(f"V : {robot.u}")
-			if wna.Waypoint(posrobot, path[0][0]).haversine() < 0.0001:
-				path[0].pop(0)
-				if path[0][0] == mainpath[0]:
-					path[1].pop(0)
-					mainpath.pop(0)
+		# robot = hc.Robot_hardpath()
+		# if len(path) > 0:
+			# #robot.follow_path()
+			# robot.move_h()
+			# #print(f"V : {robot.u}")
+			# if wna.Waypoint(posrobot, path[0][0]).haversine() < 0.0001:
+				# path[0].pop(0)
+				# if path[0][0] == mainpath[0]:
+					# path[1].pop(0)
+					# mainpath.pop(0)
 		#print(self.pos)
 	
 	def cal_thread(self, posrobot):
@@ -76,7 +76,7 @@ class mainR:
 		#waypoints = mp.read_mp()
 		return waypoints
 			
-compass_data_queue = Queue()
+# compass_data_queue = Queue()
 gps_data_queue = Queue()
 
 def read_gps():
@@ -92,48 +92,86 @@ def read_gps():
 			newmsg = pynmea2.parse(newdata)
 			lat = newmsg.latitude
 			lng = newmsg.longitude
-			latitude = lat
-			lontitude = lng
+			latitude = round(lat,6)
+			lontitude = round(lng,6)
 			gps = [latitude,lontitude]
 			gps_data_queue.put(gps)
 			time.sleep(0.02)
 	
-def read_compass():
-	while True:
-		x, y, z = bmm150.BMM150().read_mag_data()
-		heading_rads = math.atan2(x, y)
-		heading_degrees = math.degrees(heading_rads)
-		heading_degrees = round(heading_degrees)
-		compass_data_queue.put(heading_degrees)
-		time.sleep(0.5)
+# def read_compass():
+	# while True:
+		# x, y, z = bmm150.BMM150().read_mag_data()
+		# heading_rads = math.atan2(x, y)
+		# heading_degrees = math.degrees(heading_rads)
+		# heading_degrees = round(heading_degrees)
+		# compass_data_queue.put(heading_degrees)
+		# time.sleep(0.5)
 	
 def main():
-	compass_process = Process(target = read_compass)
-	compass_process.daemon = True
-	compass_process.start()
+	# compass_process = Process(target = read_compass)
+	# compass_process.daemon = True
+	# compass_process.start()
 	
 	gps_process = Process(target = read_gps)
 	gps_process.daemon = True
 	gps_process.start()
-	global compass
-	global gps
+	# global compass
+	# global gps
+	main_path = mainR().file_thread()
 	path_all=[]
+	start = 0
+	hc.port_controll()
 	while True:
-		if not compass_data_queue.empty() and not gps_data_queue.empty():
-			compass = compass_data_queue.get()
-			gps = gps_data_queue.get()
-			#print("GPS", gps)
-			print("compass", compass)
-			# print(type(path_all))
-			if gps != None and len(path_all) == 0:
-				path_all = mainR().cal_thread(gps)
-				print(path_all)
-			if gps != None  and path_all != None:
-				mainR().robot_move(gps, path_all, compass)
+		if not gps_data_queue.empty() :
+			posrobot = gps_data_queue.get()
+			if len(path_all) == 0 and start == 0:
+				path_all = mainR().cal_thread(posrobot)
+				start = 1
+				#print(path_all[0])
+				
+			elif len(path_all) == 0 and start == 1:
+				break
+				
+			if len(path_all) > 0:
+				hc.Robot_hard(path_all).move_h()
+				
+				if wna.Waypoint(posrobot, path_all[0][0]).haversine() < 0.0001:
+					path_all[0].pop(0)
+					
+					if path_all[0][0] == main_path[0]:
+						path_all[1].pop(0)
+						main_path.pop(0)
+		# if not compass_data_queue.empty() and not gps_data_queue.empty():
+			# compass = compass_data_queue.get()
+			# gps = gps_data_queue.get()
+			# #print("GPS", gps)
+			# print("compass", compass)
+			# # print(type(path_all))
+			# if gps != None and len(path_all) == 0:
+				# path_all = mainR().cal_thread(gps)
+				# print(path_all)
+			# if gps != None  and path_all != None:
+				# mainR().robot_move(gps, path_all, compass)
+				
+# def testpos():
+	# gps_process = Process(target = read_gps)
+	# gps_process.daemon = True
+	# gps_process.start()
+	# path_all=[]
+	# global gps
+	# while True:
+		# if not gps_data_queue.empty():
+			# gps = gps_data_queue.get()
+			# #print("GPS", gps)
+			# if gps != None and len(path_all) == 0:
+				# path_all = mainR().cal_thread(gps)
+		
+				# print(path_all)
 			
 	
 if __name__ == "__main__"	:
 	main()
+	# testpos()
 	# path_all = []
 	# #device = bmm150.BMM150()
 	# heading_degrees = 0

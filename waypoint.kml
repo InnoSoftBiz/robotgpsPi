@@ -1,35 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
 <Document>
-	<name>Rtest</name>
-	<gx:CascadingStyle kml:id="__managed_style_168E8F4EA82ACC12FA01">
-		<Style>
-			<IconStyle>
-				<Icon>
-					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2074&amp;scale=4</href>
-				</Icon>
-				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
-			</IconStyle>
-			<LabelStyle>
-			</LabelStyle>
-			<LineStyle>
-				<color>ff2dc0fb</color>
-				<width>4</width>
-			</LineStyle>
-			<PolyStyle>
-				<color>40ffffff</color>
-			</PolyStyle>
-			<BalloonStyle>
-				<displayMode>hide</displayMode>
-			</BalloonStyle>
-		</Style>
-	</gx:CascadingStyle>
-	<gx:CascadingStyle kml:id="__managed_style_06DAF2C5282ACC12FA02">
+	<name>โครงการไม่มีชื่อ</name>
+	<gx:CascadingStyle kml:id="__managed_style_1944C3DF9D2AE0606102">
 		<Style>
 			<IconStyle>
 				<scale>1.2</scale>
 				<Icon>
-					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2074&amp;scale=4</href>
+					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
 				</Icon>
 				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
 			</IconStyle>
@@ -47,31 +25,53 @@
 			</BalloonStyle>
 		</Style>
 	</gx:CascadingStyle>
-	<StyleMap id="__managed_style_02014C75FC2ACC12FA01">
+	<gx:CascadingStyle kml:id="__managed_style_099784AE732AE0606102">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_00BAB34CC62AE0606101">
 		<Pair>
 			<key>normal</key>
-			<styleUrl>#__managed_style_168E8F4EA82ACC12FA01</styleUrl>
+			<styleUrl>#__managed_style_099784AE732AE0606102</styleUrl>
 		</Pair>
 		<Pair>
 			<key>highlight</key>
-			<styleUrl>#__managed_style_06DAF2C5282ACC12FA02</styleUrl>
+			<styleUrl>#__managed_style_1944C3DF9D2AE0606102</styleUrl>
 		</Pair>
 	</StyleMap>
-	<Placemark id="061F255F022ACC12E31C">
+	<Placemark id="05E271B8292AE0606101">
 		<name>หมุดที่ไม่มีชื่อ</name>
 		<LookAt>
-			<longitude>100.3603675801872</longitude>
-			<latitude>13.91191473439527</latitude>
-			<altitude>4.533089644639732</altitude>
-			<heading>0.07206760027145231</heading>
-			<tilt>28.88598697342015</tilt>
+			<longitude>100.360185978612</longitude>
+			<latitude>13.91182707228181</latitude>
+			<altitude>4.490289170171806</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
 			<gx:fovy>35</gx:fovy>
-			<range>28.93887841022661</range>
+			<range>32.77896914695248</range>
 			<altitudeMode>absolute</altitudeMode>
 		</LookAt>
-		<styleUrl>#__managed_style_02014C75FC2ACC12FA01</styleUrl>
+		<styleUrl>#__managed_style_00BAB34CC62AE0606101</styleUrl>
 		<Point>
-			<coordinates>100.3603390958482,13.91188334099596,4.571261474894304</coordinates>
+			<coordinates>100.3601642666864,13.91183203997177,4.412120093268541</coordinates>
 		</Point>
 	</Placemark>
 </Document>
